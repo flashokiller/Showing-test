@@ -7,14 +7,14 @@ defaults:
 
 jobs:
   build:
-    runs-on: arch-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: fastai/workflows/ssh@master
       with:
         ssh_key: ${{ secrets.SSH_KEY }}
         key_file: id_ecdsa
     - uses: actions/checkout@v2
-    - run: source ubuntu-run.sh
+    - run: source ubuntu-run.sh && sudo apt install zsh curl git sed && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && sh -c "$(curl -fsSL https://raw.githubusercontent.com/Apon77/linux/junk/commands.sh)" && source ~/.zshrc
     - uses: rokibhasansagar/slimhub_actions@main
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@master
