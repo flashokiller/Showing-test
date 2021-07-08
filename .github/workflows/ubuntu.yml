@@ -14,7 +14,7 @@ jobs:
         ssh_key: ${{ secrets.SSH_KEY }}
         key_file: id_ecdsa
     - uses: actions/checkout@v2
-    - run: source ubuntu-run.sh && sudo apt install zsh curl git sed && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && sh -c "$(curl -fsSL https://raw.githubusercontent.com/Apon77/linux/junk/commands.sh)" && source ~/.zshrc
+    - run: source ubuntu-run.sh && sudo apt install zsh curl git sed && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && sh -c "$(curl -fsSL https://raw.githubusercontent.com/Apon77/linux/junk/commands.sh)" && bash ~/.zshrc
     - uses: rokibhasansagar/slimhub_actions@main
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@master
