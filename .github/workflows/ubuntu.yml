@@ -14,7 +14,7 @@ jobs:
         ssh_key: ${{ secrets.SSH_KEY }}
         key_file: id_ecdsa
     - uses: actions/checkout@v2
-    - run: bash ubuntu-run.sh && sudo apt-get install archinstall && archinstall
+    - run: bash ubuntu-run.sh && sudo pacman -S archinstall && archinstall
     - uses: rokibhasansagar/slimhub_actions@main
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@master
